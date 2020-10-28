@@ -1,0 +1,136 @@
+.app {
+  &__header {
+    position: fixed;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 60px;
+    padding: 0 31px 0 18px;
+    box-shadow: 0px 3px 7px 0px rgba(20, 28, 62, 0.06);
+    z-index: 10;
+    background-color: #fff;
+    cursor: default;
+    &__title {
+      display: flex;
+      align-items: center;
+      h3 {
+        margin-bottom: 0;
+        margin-left: 10px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+    .userbar {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      margin-left: auto;
+      img {
+        width: 30px;
+        height: 30px;
+      }
+      .username {
+        font-size: 16px;
+        margin: 0 20px 0 10px;
+      }
+    }
+  }
+  &__container {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 60px;
+  }
+  &__sider {
+    position: relative;
+    flex: 0 0 240px;
+    height: calc(100vh - 60px);
+    background-color: #fff;
+    padding-top: 20px;
+    user-select: none;
+    z-index: 8;
+    .side-menu {
+      .menu-head {
+        display: flex;
+        align-items: center;
+        height: 50px;
+        padding-left: 26px;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: default;
+      }
+      .menu-title {
+        margin-left: 10px;
+      }
+      .ant-menu-vertical {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border-right: 0;
+        .ant-menu-item {
+          position: relative;
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          height: 50px;
+          margin: 0;
+          padding-left: 53px;
+          font-size: 18px;
+          line-height: 23px;
+          font-weight: 500;
+          overflow: visible;
+          transition: color 0.3s ease-in-out;
+          &:active {
+            background-color: transparent;
+          }
+          &-box {
+            position: absolute;
+            right: 0;
+            width: 16px;
+            height: 16px;
+            display: none;
+            background-color: #f4f5f9;
+
+            &::after {
+              content: '';
+              display: block;
+              width: 100%;
+              height: 100%;
+              background-color: #fff;
+            }
+
+            &--top {
+              top: -16px;
+            }
+
+            &--bottom {
+              bottom: -16px;
+            }
+          }
+          &.ant-menu-item-selected {
+            background-color: #f4f5f9;
+             .ant-menu-item-box {
+                display: block;
+                &--top::after {
+                  border-bottom-right-radius: 15px;
+                }
+                &--bottom::after {
+                  border-top-right-radius: 15px;
+                }
+              }
+          }
+        }
+      }
+    }
+  }
+  &__content {
+    flex: 1;
+    min-width: 0;
+    height: calc(100vh - 60px);
+    overflow: hidden;
+  }
+}

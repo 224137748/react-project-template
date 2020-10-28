@@ -1,0 +1,29 @@
+{
+  "extends": [
+    "react-app"
+  ],
+  "rules": {
+    "semi": [
+      "error",
+      "always"
+    ],
+    "quotes": [
+      "error",
+      "single",
+      {
+        "allowTemplateLiterals": true
+      }
+    ],
+    "import/no-webpack-loader-syntax": "off"
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.worker.ts?(x)"
+      ],
+      "rules": {
+        "no-restricted-globals": "off"
+      }
+    }
+  ]
+}
